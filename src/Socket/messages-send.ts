@@ -739,7 +739,6 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 					additionalAttributes.verifedName = '8579875327160229595'
 					additionalAttributes.verifiedLevel = 'unknown'
 					additionalAttributes.notify = 'Well'
-					additionalAttributes.t = (Date.now() /1000 | 0).toString()
 				}
 				// required for delete
 				if(isDeleteMsg) {
