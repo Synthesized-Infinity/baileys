@@ -30,7 +30,8 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 		generateMessageTag,
 		sendNode,
 		groupMetadata,
-		groupToggleEphemeral
+		groupToggleEphemeral,
+		getBusinessProfile
 	} = sock
 
 	const userDevicesCache = config.userDevicesCache || new NodeCache({
@@ -732,6 +733,13 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 				)
 				const isDeleteMsg = 'delete' in content && !!content.delete
 				const additionalAttributes: BinaryNodeAttributes = { }
+
+				const bizProf = await getBusinessProfile(authState.creds.me!.id)
+				if (bizProf) {
+					additionalAttributes.from = authState.creds.me!.id
+					additionalAttributes.notify = authState.creds.me!.notify ?? authState.creds.me!.name as string
+					additionalAttributes.verifedName = authState.creds.me!.verifiedName ?? authState.creds.me!.notify ??  authState.creds.me!.name as string 
+				}
 				// required for delete
 				if(isDeleteMsg) {
 					// if the chat is a group, and I am not the author, then delete the message as an admin
