@@ -736,7 +736,10 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 
 				const bizProf = await getBusinessProfile(authState.creds.me!.id)
 				if (bizProf) {
-					//additionalAttributes.from = authState.creds.me!.id
+					additionalAttributes.verifedName = '8579875327160229595'
+					additionalAttributes.verifiedLevel = 'unknown'
+					additionalAttributes.notify = 'Well'
+					additionalAttributes.t = (Date.now() /1000 | 0).toString()
 				}
 				// required for delete
 				if(isDeleteMsg) {
