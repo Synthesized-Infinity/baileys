@@ -489,11 +489,12 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 						stanza.attrs.to = participant.jid
 						stanza.attrs.recipient = destinationJid
 					} else {
-						// .to
-						stanza.attrs.recipient = participant.jid
+						stanza.attrs.to = participant.jid
 					}
 				} else {
-					stanza.attrs.recipient = destinationJid
+					stanza.attrs.to = destinationJid
+					stanza.attrs.verified_name = "8579875327160229595"
+					stanza.attrs.verified_level = "unknown"
 				}
 
 				if(shouldIncludeDeviceIdentity) {
