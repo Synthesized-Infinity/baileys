@@ -493,7 +493,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 						stanza.attrs.recipient = participant.jid
 					}
 				} else {
-					stanza.attrs.to = destinationJid
+					stanza.attrs.recipient = destinationJid
 				}
 
 				if(shouldIncludeDeviceIdentity) {
