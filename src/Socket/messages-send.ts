@@ -281,7 +281,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 					}
 
 					const node: BinaryNode = {
-						tag: 'recipient',
+						tag: 'to',
 						attrs: { jid },
 						content: [{
 							tag: 'enc',
@@ -489,7 +489,8 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 						stanza.attrs.to = participant.jid
 						stanza.attrs.recipient = destinationJid
 					} else {
-						stanza.attrs.to = participant.jid
+						// .to
+						stanza.attrs.recipient = participant.jid
 					}
 				} else {
 					stanza.attrs.to = destinationJid
