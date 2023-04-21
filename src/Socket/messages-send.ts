@@ -735,12 +735,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 				const additionalAttributes: BinaryNodeAttributes = { }
 
 				const bizProf = await getBusinessProfile(authState.creds.me!.id)
-				if (bizProf) {
-					additionalAttributes.from = jid
-					additionalAttributes.verifed_name = '8579875327160229595'
-					additionalAttributes.verified_level = 'unknown'
-					additionalAttributes.notify = 'Well'
-				}
+
 				// required for delete
 				if(isDeleteMsg) {
 					// if the chat is a group, and I am not the author, then delete the message as an admin
