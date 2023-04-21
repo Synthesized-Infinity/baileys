@@ -281,7 +281,7 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 					}
 
 					const node: BinaryNode = {
-						tag: 'to',
+						tag: 'recipient',
 						attrs: { jid },
 						content: [{
 							tag: 'enc',
