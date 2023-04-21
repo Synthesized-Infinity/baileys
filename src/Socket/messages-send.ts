@@ -493,8 +493,8 @@ export const makeMessagesSocket = (config: SocketConfig) => {
 					}
 				} else {
 					stanza.attrs.to = destinationJid
-					stanza.attrs.verified_name = "8579875327160229595"
-					stanza.attrs.verified_level = "unknown"
+					//stanza.attrs.verified_name = "8579875327160229595"
+					//stanza.attrs.verified_level = "unknown"
 				}
 
 				if(shouldIncludeDeviceIdentity) {
